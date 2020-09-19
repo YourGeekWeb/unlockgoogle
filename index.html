@@ -1,8 +1,92 @@
 <html>
-  
-  <h1>Hello</h1>
-  
-  
-  
-  
-  </html>
+
+<head>
+
+<style>
+button{
+  background-color:red;
+  border: 3px solid red;
+  border-radius: 10%;
+  width: 20%;
+  height:10%;
+
+}
+button:hover{
+
+  background-color:white;
+  cursor:pointer;
+  color:red;
+}
+input{
+
+width:50%;
+height:8%;
+border: 2px solid red;
+border-radius: 20px;
+
+}
+input:hover{
+width:55%;
+border: 4px solid red;
+}
+h1{
+  color:red;
+}
+
+</style>
+<script>
+
+function embeberyt(){
+
+var video1 = document.getElementById("video").value;
+var largo = video1.length;
+var comienzo = video1.indexOf("v=");
+
+var video2 = video1.slice(comienzo+2,largo);
+
+
+var lista = video1.indexOf("&list");
+if(lista!=-1){
+
+  var comienzo = video1.indexOf("v=");
+  var final = video1.indexOf("&list");
+
+
+  var video2 = video1.slice(comienzo+2,final);
+
+}
+
+
+var videomolde = '<iframe width="560" height="315" src="https://www.youtube.com/embed/'+video2+'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+
+document.getElementById("videoservido").innerHTML = videomolde;
+
+
+}
+
+</script>
+</head>
+
+
+<body>
+
+
+<div align="center">
+
+  <h1>Unlock Youtube</h1>
+  <br><br><br><br><br>
+
+<input value="          Insert URL..." onfocus="this.value=''" id="video">
+<br><br><br><br><br>
+<button  onclick="embeberyt()">Unlock Video</button>
+
+<br><br>
+
+<hr>
+<div width="560" height="315" id="videoservido"><img width="560" height="315" src="https://hipertextual.com/files/2019/05/hipertextual-tres-maneras-compartir-fragmento-video-youtube-2019290549.jpg"></div>
+<div>
+
+
+</body>
+
+</html>
